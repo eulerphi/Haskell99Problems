@@ -1,7 +1,9 @@
 import System.Random
 
--- Can't say that I completely understand what is
--- going on here... does g' vs g'' make a difference?
+rnd_selectIO' :: Int -> Int -> IO [Int]
+rnd_selectIO' n m = rnd_selectIO [1 .. m] n
+
+-- from 23.hs
 rnd_select :: RandomGen g => [a] -> Int -> g -> ([a], g)
 rnd_select _  0 g = ([], g)
 rnd_select [] _ g = ([], g)
